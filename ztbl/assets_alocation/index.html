@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="utf-8">
+     <title>RADIAL MENU</title>
+     <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+     <ul class="menu">
+        <div class="toggle">
+             <ion-icon name="add-outline"></ion-icon>
+        </div>
+
+         <li style="--i:0;--clr:#ff2972;">
+            <a href="http://rohansaeed/hadiyah/ztbl/assets_alocation/displayassetsalocation.php"><ion-icon name="tv-outline"></ion-icon></a>
+        </li>
+
+       
+
+        <li style="--i:2;--clr:#04fc43;">
+             <a href="http://rohansaeed/hadiyah/ztbl/assets_alocation/infoEditassetsalocation.php"><ion-icon name="create-outline"></ion-icon></a>
+        </li>
+
+        
+
+        <li style="--i:4;--clr:#00b0fe;">
+            <a href="http://rohansaeed/hadiyah/ztbl/assets_alocation/insertassetsalocationform.php"><ion-icon name="person-add-outline"></ion-icon></a>
+        </li>
+
+       
+
+        <li style="--i:6;--clr:#a529ff;">
+             <a href="http://rohansaeed/hadiyah/ztbl/assets_alocation/selectassetsalocationdel.php"><ion-icon name="trash-outline"></ion-icon></a>
+        </li>
+
+        
+     </ul>
+
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let toggle = document.querySelector('.toggle')
+        let menu = document.querySelector('.menu')
+        toggle.onclick = function(){
+        menu.classList.toggle('active')
+        }
+    </script>
+
+ </body>
+ </html>
+
+
+
+
+ <!--csssssssssssssssssssss-->
+
+
+ <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    min-height:100vh;
+    background: #000000;
+}
+
+
+.menu{
+    position: relative;
+    width:280px;
+    height:280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.menu li{
+    position: absolute;
+    left:0;
+    list-style: none;
+    transition:0.5s;
+    transition-delay: calc(0.1s * var(--i));
+    transform-origin: 140px;
+    transform:rotate(0deg) translateX(110px);
+}
+
+
+.menu.active li{
+    transform:rotate(calc(360deg / 8 * var(--i))) translateX(0px);
+
+}
+
+
+.menu li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:60px;
+    height:60px;
+    color:var(--clr);
+    border: 2px solid var(--clr);
+    border-radius:50%;
+    font-size:1em;
+    transform:rotate(calc(360deg / -8 * var(--i))) translateX(0px);
+    transition:1s;
+}
+
+
+
+.menu li a:hover{
+    transition:0s;
+    background-color: var(--clr);
+    color: #333;
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr),
+    0 0 50px var(--clr);
+}
+
+
+.menu .toggle{
+    position:absolute ;
+    width:60px ;
+    height:60px ;
+    background: #2f353e;
+    border:2px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    z-index: 10000;
+    font-size: 2em;
+    transition: transform 1.25s;
+}
+
+
+.menu.active .toggle{
+    transform: rotate(315deg);
+}
+
+
+</style>
